@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -1
+layer = -5
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
@@ -23,6 +23,10 @@ position = Vector2(2, 3)
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-2, -3)
 
+[node name="WaveCoolTimer" type="Timer" parent="player"]
+
+[node name="Node2D" type="Node2D" parent="player"]
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-375, -7)
 texture = ExtResource("2_0wfyh")
@@ -30,9 +34,3 @@ texture = ExtResource("2_0wfyh")
 [node name="Icon2" type="Sprite2D" parent="."]
 position = Vector2(318, 22)
 texture = ExtResource("2_0wfyh")
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-
-[node name="WaveCoolTimer" type="Timer" parent="player"]
-
-[node name="Node2D" type="Node2D" parent="player"]

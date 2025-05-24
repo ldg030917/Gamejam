@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
-@export var speed = 200
+
 
 func _ready() -> void:
 	pass
@@ -26,7 +25,6 @@ func _physics_process(delta: float) -> void:
 func handle_collision(res) -> void:
 	if res:
 		pass
-=======
 @export var speed = 100
 @export var n_particle = 120
 var emit_on = false
@@ -52,4 +50,3 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("Emit") :
 		emit_on = !emit_on
 		
->>>>>>> feature

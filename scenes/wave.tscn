@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dljgnn4fnahjv"]
 
 [ext_resource type="Script" uid="uid://veuw4o6tf5vx" path="res://scripts/wave.gd" id="1_h2l3e"]
-[ext_resource type="Texture2D" uid="uid://dqbaibbia65yv" path="res://Sprites/player.png" id="2_sl0wx"]
+[ext_resource type="Texture2D" uid="uid://dkqx6qddr1m55" path="res://sprites/player_idle.png" id="2_sl0wx"]
 
 [node name="wave" type="Node2D"]
 script = ExtResource("1_h2l3e")
