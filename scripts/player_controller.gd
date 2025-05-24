@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed = 230
 @export var n_particle = 120
@@ -69,3 +70,22 @@ func change_arrow() :
 	else :
 		velocity = Input.get_vector("Right", "Left", "Up", "Down").normalized()
 	
+func die():
+	set_process(false)
+	set_physics_process(false)
+	
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(0.1, 0.1), 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_callback(Callable(self, "_on_death_shrink_finished"))
+	#tween.play()
+
+func _on_death_shrink_finished():
+	if global.respawn_position != Vector2.ZERO:
+		global_position = global.respawn_position
+		scale = Vector2.ONE
+		velocity = Vector2.ZERO
+		set_process(true)
+		set_physics_process(true)
+	else:
+		get_tree().reload_current_scene()
+		#print("you died")
