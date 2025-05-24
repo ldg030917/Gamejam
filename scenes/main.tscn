@@ -30,3 +30,9 @@ texture = ExtResource("2_0wfyh")
 [node name="Icon2" type="Sprite2D" parent="."]
 position = Vector2(318, 22)
 texture = ExtResource("2_0wfyh")
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="WaveCoolTimer" type="Timer" parent="player"]
+
+[node name="Node2D" type="Node2D" parent="player"]
