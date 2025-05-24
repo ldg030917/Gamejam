@@ -14,6 +14,10 @@ config/name="game"
 run/main_scene="uid://b0x5gtyqhhtbp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ldtk-importer/plugin.cfg")
+
 [input]
 
 Left={
