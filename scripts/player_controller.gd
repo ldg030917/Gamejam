@@ -33,11 +33,11 @@ func handle_collision(res) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("Emit") :
 		emit_on = !emit_on
-	if Input.is_action_pressed("Blue") :
+	if Input.is_action_pressed("Blue") and global.fragment==1 :
 		global.B = !global.B
-	if Input.is_action_pressed("Green") :
+	if Input.is_action_pressed("Green") and global.fragment==2 :
 		global.G = !global.G
-	if Input.is_action_pressed("Red") :
+	if Input.is_action_pressed("Red") and global.fragment==3 :
 		global.R = !global.R
 	sprite.modulate.b = 1.0 if global.B else 0.5
 	sprite.modulate.g = 1.0 if global.G else 0.5
