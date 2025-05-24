@@ -129,5 +129,5 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="WaveCool" type="Timer" parent="."]
-wait_time = 0.6
+wait_time = 0.8
 one_shot = true

@@ -5,3 +5,9 @@ func set_alpha(alpha: float) -> void:
 
 func _process(delta: float) -> void:
 	$Sprite2D.modulate.a -= delta*0.4
+	if ((global.B and is_in_group("water")) or
+		(global.G and is_in_group("vine")) or
+		(global.R and is_in_group("flame"))) :
+		set_collision_mask_value(1, false)
+	else :
+		set_collision_mask_value(1, true)
