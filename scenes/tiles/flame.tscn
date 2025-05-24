@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://clrq6l30u8eiv"]
+[gd_scene load_steps=4 format=3 uid="uid://bq35akebwvoco"]
 
-[ext_resource type="Script" uid="uid://be3u4n4ocxru2" path="res://scripts/Tile.gd" id="1_dmdmm"]
-[ext_resource type="Texture2D" uid="uid://csxh1y81xoahe" path="res://sprites/flame.png" id="2_eaeqi"]
+[ext_resource type="Script" uid="uid://be3u4n4ocxru2" path="res://scripts/tile.gd" id="1_x0n2q"]
+[ext_resource type="Texture2D" uid="uid://dbq5d40wu5nn0" path="res://sprites/fire.png" id="2_s5df6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywnoi"]
 size = Vector2(128, 127)
@@ -9,11 +9,10 @@ size = Vector2(128, 127)
 [node name="flame" type="StaticBody2D" groups=["flame"]]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_dmdmm")
+script = ExtResource("1_x0n2q")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["flame"]]
-rotation = -1.5708
-texture = ExtResource("2_eaeqi")
+texture = ExtResource("2_s5df6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
