@@ -8,6 +8,6 @@ func _process(delta: float) -> void:
 	if ((global.B and is_in_group("water")) or
 		(global.G and is_in_group("vine")) or
 		(global.R and is_in_group("flame"))) :
-		set_collision_mask_value(1, false)
+		set_collision_layer_value(2, false)
 	else :
-		set_collision_mask_value(1, true)
+		set_collision_layer_value(2, true)

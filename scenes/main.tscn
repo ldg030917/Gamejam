@@ -67,4 +67,10 @@ layer_0/tile_data = PackedInt32Array(-4, 2, 65536, 65532, 2, 65536, 131068, 2, 6
 position = Vector2(-231, 153)
 
 [node name="Node2D" parent="." instance=ExtResource("11_eb6dy")]
-position = Vector2(205, -117)
+position = Vector2(257, -128)
+
+[node name="fragment2" parent="." instance=ExtResource("10_ya4ey")]
+position = Vector2(-190, 550)
+
+[node name="fragment3" parent="." instance=ExtResource("10_ya4ey")]
+position = Vector2(-191, 349)
