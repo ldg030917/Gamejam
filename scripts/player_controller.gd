@@ -35,28 +35,23 @@ func handle_collision(res) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("Emit") :
 		emit_on = !emit_on
-	if Input.is_action_pressed("Blue") and global.fragment >= 1 :
-		global.B = !global.B
-	if Input.is_action_pressed("Green") and global.fragment >= 2 :
-		global.G = !global.G
-	if Input.is_action_pressed("Red") and global.fragment >= 3 :
 		if emit_on :
 			$Sound_gray.volume_db = 0
 		else :
 			$Sound_gray.volume_db = -80
-	if Input.is_action_pressed("Blue") :
+	if Input.is_action_pressed("Blue") and global.fragment >= 1 :
 		global.B = !global.B
 		if global.B :
 			$Sound_blue.volume_db = 0
 		else :
 			$Sound_blue.volume_db = -80
-	if Input.is_action_pressed("Green") :
+	if Input.is_action_pressed("Green") and global.fragment >= 2 :
 		global.G = !global.G
 		if global.G :
 			$Sound_green.volume_db = 0
 		else :
 			$Sound_green.volume_db = -80
-	if Input.is_action_pressed("Red") :
+	if Input.is_action_pressed("Red") and global.fragment >= 3 :
 		global.R = !global.R
 		if global.R :
 			$Sound_red.volume_db = 0
