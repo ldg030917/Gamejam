@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+func _ready() -> void:
+	$Sprite2D.modulate.a = 0
+
 func set_alpha(alpha: float) -> void:
 	$Sprite2D.modulate.a = alpha+0.1
 

@@ -26,11 +26,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		$AnimatedSprite2D.play("idle")
 			
-	handle_collision(move_and_collide(velocity * speed * delta))
-
-func handle_collision(res) -> void:
-	if res:
-		pass
+	var collision = move_and_collide(velocity * speed * delta)
+	
+	if collision :
+		var collider = collision.get_collider()
+		if collider.is_in_group("saw") or collider.is_in_group("laser"):
+			die()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("Emit") :
@@ -57,13 +58,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			$Sound_red.volume_db = 0
 		else :
 			$Sound_red.volume_db = -80
-	sprite.modulate.b = 1.0 if global.B else 0.5
-	sprite.modulate.g = 1.0 if global.G else 0.5
-	sprite.modulate.r = 1.0 if global.R else 0.5
 	
 
 func _process(delta: float) -> void:
-	
+	sprite.modulate.b = 1.0 if global.B else 0.5
+	sprite.modulate.g = 1.0 if global.G else 0.5
+	sprite.modulate.r = 1.0 if global.R else 0.5
 	
 	if emit_on and $WaveCool.time_left == 0 :	
 		var wave = wave.instantiate() as Node2D
@@ -92,6 +92,9 @@ func change_arrow() :
 func die():
 	set_physics_process(false)
 	set_process(false)
+	global.B = false
+	global.G = false
+	global.R = false
 
    # Tween 애니메이션 실행
 	var tween = create_tween()

@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://d3gwdmtdn8yy7"]
 
-[ext_resource type="Script" uid="uid://be3u4n4ocxru2" path="res://scripts/tile.gd" id="1_ywnoi"]
-[ext_resource type="Texture2D" uid="uid://dmktup4hgnbls" path="res://sprites/wall.png" id="2_p3kyp"]
+[ext_resource type="Script" uid="uid://berw5udplvjxo" path="res://scripts/tile.gd" id="1_ywnoi"]
+[ext_resource type="Texture2D" uid="uid://jx8be6odp28q" path="res://sprites/light.png" id="2_p3kyp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywnoi"]
 size = Vector2(128, 127)
 
 [node name="wall" type="StaticBody2D" groups=["wall"]]
 collision_layer = 10
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("1_ywnoi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.498039, 0.498039, 0.498039, 1)
 texture = ExtResource("2_p3kyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
