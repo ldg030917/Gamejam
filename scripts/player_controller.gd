@@ -6,6 +6,8 @@ var emit_on = false
 @onready var wave = preload("res://scenes/wave.tscn")
 @onready var sprite = $AnimatedSprite2D
 
+
+
 func _physics_process(delta: float) -> void:
 	if emit_on :
 		change_arrow()
@@ -45,6 +47,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 func _process(delta: float) -> void:
+	
+	
 	if emit_on and $WaveCool.time_left == 0 :	
 		var wave = wave.instantiate() as Node2D
 		get_tree().root.add_child(wave)
