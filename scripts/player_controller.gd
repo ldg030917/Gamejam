@@ -7,7 +7,6 @@ var emit_on = false
 @onready var sprite = $AnimatedSprite2D
 
 
-
 func _physics_process(delta: float) -> void:
 	if emit_on :
 		change_arrow()
@@ -35,12 +34,28 @@ func handle_collision(res) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("Emit") :
 		emit_on = !emit_on
+		if emit_on :
+			$Sound_gray.volume_db = 0
+		else :
+			$Sound_gray.volume_db = -80
 	if Input.is_action_pressed("Blue") :
 		global.B = !global.B
+		if global.B :
+			$Sound_blue.volume_db = 0
+		else :
+			$Sound_blue.volume_db = -80
 	if Input.is_action_pressed("Green") :
 		global.G = !global.G
+		if global.G :
+			$Sound_green.volume_db = 0
+		else :
+			$Sound_green.volume_db = -80
 	if Input.is_action_pressed("Red") :
 		global.R = !global.R
+		if global.R :
+			$Sound_red.volume_db = 0
+		else :
+			$Sound_red.volume_db = -80
 	sprite.modulate.b = 1.0 if global.B else 0.5
 	sprite.modulate.g = 1.0 if global.G else 0.5
 	sprite.modulate.r = 1.0 if global.R else 0.5
