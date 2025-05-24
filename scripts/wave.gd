@@ -27,9 +27,9 @@ func _on_vanish_timer_timeout() -> void:
 
 func _on_body_entered(body):
 	if (body.is_in_group("wall") or 
-		(body.is_in_group("water") and global.B and !global.G and !global.R) or
-		(body.is_in_group("vine") and !global.B and global.G and !global.R) or
-		(body.is_in_group("flame") and !global.B and !global.G and global.R) or
+		body.is_in_group("water")  or
+		body.is_in_group("vine")  or
+		body.is_in_group("flame")  or
 		(body.is_in_group("saw") and !global.B and global.G and global.R) or
 		(body.is_in_group("white") and global.B and global.G and global.R)) :
 		body.set_alpha($Sprite2D.modulate.a)
