@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed = 230
 @export var n_particle = 120
@@ -68,4 +69,23 @@ func change_arrow() :
 		velocity = Input.get_vector("Left", "Down", "Up", "Right").normalized()
 	else :
 		velocity = Input.get_vector("Right", "Left", "Up", "Down").normalized()
-	
+
+func die():
+	set_physics_process(false)
+	set_process(false)
+
+   # Tween 애니메이션 실행
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(0.1, 0.1), 0.4).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tween.tween_callback(Callable(self, "_on_death_shrink_finished"))
+
+func _on_death_shrink_finished():
+	# 부활 위치로 이동 또는 씬 리로드
+	if global.respawn_position != Vector2.ZERO:
+		global_position = global.respawn_position
+		scale = Vector2.ONE
+		velocity = Vector2.ZERO
+		set_physics_process(true)
+		set_process(true)
+	else:
+		get_tree().reload_current_scene()
